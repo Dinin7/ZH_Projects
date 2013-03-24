@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="ZH_Classes" namespace="ZH_Classes" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="User" table="User" lazy="true" >
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+		<property name="Username">
+			<column name="Username" sql-type="varchar(100)" not-null="true" />
+		</property>
+		<property name="Passwrd">
+			<column name="Passwrd" sql-type="varchar(45)" not-null="true" />
+		</property>
+		<property name="Email">
+			<column name="Email" sql-type="varchar(100)" not-null="true" />
+		</property>
+		<property name="LastLogin">
+			<column name="LastLogin" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="ValidSince">
+			<column name="ValidSince" sql-type="datetime" not-null="true" />
+		</property>
+		<property name="ValidTo">
+			<column name="ValidTo" sql-type="date" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

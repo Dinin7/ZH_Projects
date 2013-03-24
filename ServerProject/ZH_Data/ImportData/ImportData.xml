@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ImportData>
+	<Skills>
+		<Skill>
+			<Name>Strenght1</Name>
+			<SkillPoints>100</SkillPoints>
+			<SkillPointsMultiplier>1</SkillPointsMultiplier>
+			<Mods>
+				<Mod>
+					<ModAttributeType>CStr</ModAttributeType>
+					<ModType>Percent</ModType>
+					<Modifier>10</Modifier>
+				</Mod>
+				<Mod>
+					<ModAttributeType>CStr</ModAttributeType>
+					<ModType>Absolut</ModType>
+					<Modifier>4</Modifier>
+				</Mod>
+			</Mods>
+		</Skill>
+	</Skills>
+</ImportData>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="ZH_Classes" namespace="ZH_Classes" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="ZHCharacter" table="ZHCharacter" lazy="true" >
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+		<property name="UserID">
+			<column name="UserID" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="Firstname">
+			<column name="Firstname" sql-type="varchar(100)" not-null="true" />
+		</property>
+		<property name="Lastname">
+			<column name="Lastname" sql-type="varchar(100)" not-null="false" />
+		</property>
+		<property name="Gender">
+			<column name="Gender" sql-type="char(1)" not-null="true" />
+		</property>
+		<property name="Caps">
+			<column name="Caps" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="Experience">
+			<column name="Experience" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="Level">
+			<column name="Level" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="Skillpoints">
+			<column name="Skillpoints" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="PositionLat">
+			<column name="PositionLat" sql-type="float" not-null="true" />
+		</property>
+		<property name="PositionLng">
+			<column name="PositionLng" sql-type="float" not-null="true" />
+		</property>
+		<property name="TestSpeed">
+			<column name="TestSpeed" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="Strength">
+			<column name="Strength" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="Dexterity">
+			<column name="Dexterity" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="Intelligence">
+			<column name="Intelligence" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="Attention">
+			<column name="Attention" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="Health">
+			<column name="Health" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="Regeneration">
+			<column name="Regeneration" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="Resistance">
+			<column name="Resistance" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="ZombieAttraction">
+			<column name="ZombieAttraction" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="MaxLoad">
+			<column name="MaxLoad" sql-type="int(11)" not-null="false" />
+		</property>
+
+		<bag name="Accuracies" inverse="true" cascade="none">
+			<key column="CharacterID" />
+			<one-to-many class="Accuracy" />
+		</bag>
+		<bag name="EquipmentBases" inverse="true" cascade="none">
+			<key column="CharacterID" />
+			<one-to-many class="EquipmentBase" />
+		</bag>
+		<bag name="Merchantrelations" inverse="true" cascade="none">
+			<key column="CharacterID" />
+			<one-to-many class="Merchantrelation" />
+		</bag>
+		<bag name="Skills" inverse="true" cascade="none">
+			<key column="CharacterID" />
+			<one-to-many class="CharacterSkill" />
+		</bag>
+	</class>
+</hibernate-mapping>

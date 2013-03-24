@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="ZH_Classes" namespace="ZH_Classes" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SkillMod" table="SkillMod" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    <property name="SkillID">
+      <column name="SkillID" sql-type="int(11)" not-null="true" />
+    </property>
+    <property name="ModAttributeTypeValue">
+      <column name="ModAttributeTypeValue" sql-type="int(11)" not-null="true" />
+    </property>
+    <property name="ModTypeValue">
+      <column name="ModTypeValue" sql-type="int(11)" not-null="true" />
+    </property>
+    <property name="Modifier">
+      <column name="Modifier" sql-type="int(11)" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

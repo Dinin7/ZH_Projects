@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="ZH_Classes" namespace="ZH_Classes" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MerchantStock" table="MerchantStock" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    <property name="EqId">
+      <column name="EqId" sql-type="int(11)" not-null="true" />
+    </property>
+    <property name="MerchantID">
+      <column name="MerchantID" sql-type="int(11)" not-null="true" />
+    </property>
+    <property name="Amount">
+      <column name="Amount" sql-type="int(11)" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

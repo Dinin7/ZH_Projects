@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="ZH_Classes" namespace="ZH_Classes" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Merchantrelation" table="Merchantrelation" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    <property name="CharacterID">
+      <column name="CharacterID" sql-type="int(11)" not-null="true" />
+    </property>
+    <property name="MerchantID">
+      <column name="MerchantID" sql-type="int(11)" not-null="true" />
+    </property>
+    <property name="RelationPoints">
+      <column name="RelationPoints" sql-type="int(11)" not-null="true" />
+    </property>
+    <property name="FirstTransaction">
+      <column name="FirstTransaction" sql-type="datetime" not-null="false" />
+    </property>
+    <property name="LastTransaction">
+      <column name="LastTransaction" sql-type="datetime" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

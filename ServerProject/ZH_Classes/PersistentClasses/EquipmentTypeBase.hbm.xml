@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="ZH_Classes" namespace="ZH_Classes" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquipmentTypeBase" table="EquipmentTypeBase" lazy="true" >
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+		<property name="EqName">
+			<column name="EqName" sql-type="varchar(100)" not-null="true" />
+		</property>
+		<property name="ReqSkillId">
+			<column name="ReqSkillId" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="Price">
+			<column name="Price" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="Weight">
+			<column name="Weight" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="ReqRelationPoints">
+			<column name="ReqRelationPoints" sql-type="int(11)" not-null="false" />
+		</property>
+		<property name="ZombieAttraction">
+			<column name="ZombieAttraction" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="ObjectType">
+			<column name="ObjectType" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="Complexity">
+			<column name="Complexity" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="AmountSlots">
+			<column name="AmountSlots" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="SlotTypeValue">
+			<column name="SlotTypeValue" sql-type="int(11)" not-null="true" />
+		</property>
+		<joined-subclass table="EquipmentTypeAmmo"	name="EquipmentTypeAmmo" >
+			<key column="RefID"/>
+			<property name="AmmoTypeValue">
+				<column name="AmmoTypeValue" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="CaliberTypeValue">
+				<column name="CaliberTypeValue" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="DamageModArmor">
+				<column name="DamageModArmor" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="DamageMod">
+				<column name="DamageMod" sql-type="int(11)" not-null="true" />
+			</property>
+		</joined-subclass>
+		<joined-subclass table="EquipmentTypeArmor"	name="EquipmentTypeArmor" >
+			<key column="RefID"/>
+			<property name="DamageModBullet">
+				<column name="DamageMod_Bullet" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="DamageModHit">
+				<column name="DamageMod_Hit" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="ConditionLossPerBullet">
+				<column name="ConditionLossPerBullet" sql-type="decimal(10,0)" not-null="true" />
+			</property>
+			<property name="ConditionLossPerHit">
+				<column name="ConditionLossPerHit" sql-type="decimal(10,0)" not-null="true" />
+			</property>
+		</joined-subclass>
+		<joined-subclass table="EquipmentTypeWeapon"	name="EquipmentTypeWeapon" >
+			<key column="RefID"/>
+			<property name="CaliberTypeValue">
+				<column name="CaliberTypeValue" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="WeaponRange">
+				<column name="WeaponRange" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="PrecisionManual">
+				<column name="PrecisionManual" sql-type="int(11)" not-null="false" />
+			</property>
+			<property name="PrecisionAuto">
+				<column name="PrecisionAuto" sql-type="int(11)" not-null="false" />
+			</property>
+			<property name="Damage">
+				<column name="Damage" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="Magazinsize">
+				<column name="Magazinsize" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="Reloadtime">
+				<column name="Reloadtime" sql-type="decimal(10,0)" not-null="true" />
+			</property>
+			<property name="ConditionLossPerBullet">
+				<column name="ConditionLossPerBullet" sql-type="decimal(10,0)" not-null="true" />
+			</property>
+			<property name="AutomaticTypeValue">
+				<column name="AutomaticTypeValue" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="FirerateManual">
+				<column name="FirerateManual" sql-type="decimal(10,0)" not-null="false" />
+			</property>
+			<property name="FirerateAuto">
+				<column name="FirerateAuto" sql-type="decimal(10,0)" not-null="false" />
+			</property>
+			<property name="Loudness">
+				<column name="Loudness" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="DamageDropOff">
+				<column name="DamageDropOff" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="Spreading">
+				<column name="Spreading" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="DamageModArmor">
+				<column name="DamageModArmor" sql-type="int(11)" not-null="true" />
+			</property>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

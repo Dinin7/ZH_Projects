@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="ZH_Classes" namespace="ZH_Classes" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="EquipmentBase" table="EquipmentBase" lazy="true" >
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+		<property name="CharacterID">
+			<column name="CharacterID" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="EqName">
+			<column name="EqName" sql-type="varchar(100)" not-null="true" />
+		</property>
+		<property name="EqCondition">
+			<column name="EqCondition" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="EffWeight">
+			<column name="EffWeight" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="EffZombieAttraction">
+			<column name="EffZombieAttraction" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="ObjectTypeValue">
+			<column name="ObjectTypeValue" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="AmountSlots">
+			<column name="AmountSlots" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="EquipmentTypeBaseID">
+			<column name="EquipmentTypeBaseID" sql-type="int(11)" not-null="true" />
+		</property>
+		<joined-subclass table="EquipmentAmmo"	name="EquipmentAmmo" >
+			<key column="RefID"/>
+			<property name="AmmoTypeValue">
+				<column name="AmmoTypeValue" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="CaliberTypeValue">
+				<column name="CaliberTypeValue" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="EffDamageModArmor">
+				<column name="EffDamageModArmor" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="EffDamageMod">
+				<column name="EffDamageMod" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="Amount">
+				<column name="Amount" sql-type="int(11)" not-null="true" />
+			</property>
+		</joined-subclass>
+		<joined-subclass table="EquipmentArmor"	name="EquipmentArmor" >
+			<key column="RefID"/>
+			<property name="EffDamageModBullet">
+				<column name="EffDamageModBullet" sql-type="int(11)" not-null="false" />
+			</property>
+			<property name="EffDamageModHit">
+				<column name="EffDamageModHit" sql-type="int(11)" not-null="false" />
+			</property>
+			<property name="EffConditionModBullet">
+				<column name="EffConditionModBullet" sql-type="decimal(10,0)" not-null="false" />
+			</property>
+			<property name="EffConditionModHit">
+				<column name="EffConditionModHit" sql-type="decimal(10,0)" not-null="false" />
+			</property>
+		</joined-subclass>
+		<joined-subclass table="EquipmentWeapon"	name="EquipmentWeapon" >
+			<key column="RefID"/>
+			<property name="CaliberTypeValue">
+				<column name="CaliberTypeValue" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="EffRange">
+				<column name="EffRange" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="EffPrecisionManual">
+				<column name="EffPrecisionManual" sql-type="int(11)" not-null="false" />
+			</property>
+			<property name="EffPrecisionAuto">
+				<column name="EffPrecisionAuto" sql-type="int(11)" not-null="false" />
+			</property>
+			<property name="EffDamage">
+				<column name="EffDamage" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="EffMagazinsize">
+				<column name="EffMagazinsize" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="EffReloadTime">
+				<column name="EffReloadTime" sql-type="decimal(10,0)" not-null="true" />
+			</property>
+			<property name="EffContitionLossPerBullet">
+				<column name="EffContitionLossPerBullet" sql-type="decimal(10,0)" not-null="true" />
+			</property>
+			<property name="EffFirerateManual">
+				<column name="EffFirerateManual" sql-type="decimal(10,0)" not-null="false" />
+			</property>
+			<property name="EffFirerateAuto">
+				<column name="EffFirerateAuto" sql-type="decimal(10,0)" not-null="false" />
+			</property>
+			<property name="EffLoudness">
+				<column name="EffLoudness" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="EffDamageDropOff">
+				<column name="EffDamageDropOff" sql-type="decimal(10,0)" not-null="true" />
+			</property>
+			<property name="EffSpreading">
+				<column name="EffSpreading" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="AutomaticType">
+				<column name="AutomaticType" sql-type="int(11)" not-null="true" />
+			</property>
+			<property name="EffDamageModArmor">
+				<column name="EffDamageModArmor" sql-type="int(11)" not-null="true" />
+			</property>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="ZH_Classes" namespace="ZH_Classes" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Skill" table="Skill" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    <property name="SkillName">
+      <column name="SkillName" sql-type="varchar(100)" not-null="true" />
+    </property>
+    <property name="Skillpoints">
+      <column name="Skillpoints" sql-type="int(11)" not-null="true" />
+    </property>
+    <property name="SkillpointsMultiplier">
+      <column name="SkillpointsMultiplier" sql-type="decimal(10,0)" not-null="false" />
+    </property>
+    <property name="PreStrenght">
+      <column name="PreStrenght" sql-type="int(11)" not-null="false" />
+    </property>
+    <property name="PreDexterity">
+      <column name="PreDexterity" sql-type="int(11)" not-null="false" />
+    </property>
+    <property name="PreIntelligence">
+      <column name="PreIntelligence" sql-type="int(11)" not-null="false" />
+    </property>
+    <property name="PreAttention">
+      <column name="PreAttention" sql-type="int(11)" not-null="false" />
+    </property>
+    <property name="PreSkillID1">
+      <column name="PreSkillID1" sql-type="int(11)" not-null="false" />
+    </property>
+    <property name="PreSkillLevel1">
+      <column name="PreSkillLevel1" sql-type="int(11)" not-null="false" />
+    </property>
+    <property name="PreSkillID2">
+      <column name="PreSkillID2" sql-type="int(11)" not-null="false" />
+    </property>
+    <property name="PreSkillLevel2">
+      <column name="PreSkillLevel2" sql-type="int(11)" not-null="false" />
+    </property>
+    
+    <bag name="SkillMods" inverse="true" cascade="none">
+      <key column="SkillID" />
+      <one-to-many class="SkillMod" />
+    </bag>
+  </class>
+</hibernate-mapping>

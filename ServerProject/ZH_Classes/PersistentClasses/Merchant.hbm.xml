@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="ZH_Classes" namespace="ZH_Classes" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Merchant" table="Merchant" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    <property name="MerchantName">
+      <column name="MerchantName" sql-type="varchar(100)" not-null="true" />
+    </property>
+    <property name="PositionLat">
+      <column name="PositionLat" sql-type="float" not-null="true" />
+    </property>
+    <property name="PositionLng">
+      <column name="PositionLng" sql-type="float" not-null="true" />
+    </property>
+    <property name="Quality">
+      <column name="Quality" sql-type="int(11)" not-null="true" />
+    </property>
+    <property name="ObjectTypeValue">
+      <column name="ObjectTypeValue" sql-type="int(11)" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="ZH_Classes" namespace="ZH_Classes" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CharacterSkill" table="CharacterSkill" lazy="true" >
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+		<property name="CharacterID">
+			<column name="CharacterID" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="SkillID">
+			<column name="SkillID" sql-type="int(11)" not-null="true" />
+		</property>
+		<property name="Level">
+			<column name="Level" sql-type="int(11)" not-null="true" />
+		</property>
+		<one-to-one name="Skill" class="Skill"></one-to-one>
+	</class>
+</hibernate-mapping>
